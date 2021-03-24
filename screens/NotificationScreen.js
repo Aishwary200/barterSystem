@@ -4,6 +4,7 @@ import { ListItem, Icon } from 'react-native-elements';
 import firebase from 'firebase';
 import db from '../config';
 import MyHeader from '../component/MyHeader'
+import SwipeableFlatlist from '../component/SwipeableFlatlist'
 
 export default class NotificationScreen extends Component {
     constructor(props) {
@@ -73,11 +74,7 @@ export default class NotificationScreen extends Component {
                                 </View>
                             )
                             : (
-                                <FlatList
-                                    keyExtractor={this.keyExtractor}
-                                    data={this.state.allNotifications}
-                                    renderItem={this.renderItem}
-                                />
+                                <SwipeableFlatlist allNotifications={this.state.allNotifications} />
                             )
                     }
                 </View>
