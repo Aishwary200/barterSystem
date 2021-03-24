@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView, FlatList, StyleSheet } from '
 import { Icon, ListItem } from 'react-native-elements'
 import firebase from 'firebase';
 import db from '../config.js'
+import MyHeader from '../component/MyHeader'
 
 export default class MyBartersScreen extends Component {
     static navigationOptions = { header: null };
@@ -77,7 +78,7 @@ export default class MyBartersScreen extends Component {
     render() {
         return (
             <View style={{ flex: 0.1 }}>
-                <Text>Notifications</Text>
+                <MyHeader navigation={this.props.navigation} title="My Barters" />
                 <View style={{ flex: 0.9 }}>
                     {
                         this.state.allBarters.length === 0

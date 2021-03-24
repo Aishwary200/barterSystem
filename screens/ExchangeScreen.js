@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Alert, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View, KeyboardAvoidingView } from 'react-native';
 import db from '../config'
-import HomeScreen from './HomeScreen'
 import firebase from 'firebase'
+import MyHeader from '../component/MyHeader'
 
 export default class ExchangeScreen extends Component {
     constructor() {
@@ -56,26 +56,29 @@ export default class ExchangeScreen extends Component {
     }
     render() {
         return (
-            <View>
-                <TextInput placeholder="item name"
-                    onChangeText={(text) => {
-                        this.setState({
-                            itemName: text
-                        })
-                    }}
-                />
-                <TextInput placeholder="description"
-                    onChangeText={(text) => {
-                        this.setState({
-                            description: text
-                        })
-                    }}
-                />
-                <TouchableOpacity onPress={() => {
-                    this.addItem(this.state.itemName, this.state.description)
-                }}>
-                    <Text style={{ color: '#ffff', fontSize: 18, fontWeight: 'bold' }}>Add Item</Text>
-                </TouchableOpacity>
+            <View style={{ flex: 1 }}>
+                <MyHeader title="Add Item" navigation={this.props.navigation} />
+                <KeyboardAvoidingView>
+                    <TextInput placeholder="item name"
+                        onChangeText={(text) => {
+                            this.setState({
+                                itemName: text
+                            })
+                        }}
+                    />
+                    <TextInput placeholder="description"
+                        onChangeText={(text) => {
+                            this.setState({
+                                description: text
+                            })
+                        }}
+                    />
+                    <TouchableOpacity onPress={() => {
+                        this.addItem(this.state.itemName, this.state.description)
+                    }}>
+                        <Text style={{ color: '#ffff', fontSize: 18, fontWeight: 'bold' }}>Add Item</Text>
+                    </TouchableOpacity>
+                </KeyboardAvoidingView>
             </View>
         )
     }

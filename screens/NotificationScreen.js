@@ -3,6 +3,7 @@ import { StyleSheet, View, FlatList, Text } from 'react-native';
 import { ListItem, Icon } from 'react-native-elements';
 import firebase from 'firebase';
 import db from '../config';
+import MyHeader from '../component/MyHeader'
 
 export default class NotificationScreen extends Component {
     constructor(props) {
@@ -61,7 +62,7 @@ export default class NotificationScreen extends Component {
         return (
             <View style={styles.container}>
                 <View style={{ flex: 0.1 }}>
-                    <Text>Notifications</Text>
+                    <MyHeader title={"Notifications"} navigation={this.props.navigation} />
                 </View>
                 <View style={{ flex: 0.9 }}>
                     {
