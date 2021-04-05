@@ -15,6 +15,7 @@ export default class SignUpLoginScreen extends Component {
             contact: '',
             address: '',
             confirmPassword: '',
+            currencyCode: ''
 
         }
     }
@@ -177,7 +178,7 @@ export default class SignUpLoginScreen extends Component {
                     <Text style={styles.title}>Barter System</Text>
                 </View>
                 <View>
-                    <TextInput style={styles.loginBox} placeholder="abc@example.com"
+                    <TextInput style={styles.formTextInput} placeholder="abc@example.com"
                         keyboardType='email-address'
                         onChangeText={(text) => {
                             this.setState({
@@ -185,11 +186,19 @@ export default class SignUpLoginScreen extends Component {
                             })
                         }}
                     />
-                    <TextInput style={styles.loginBox} placeholder="Enter password"
+                    <TextInput style={styles.formTextInput} placeholder="Enter password"
                         secureTextEntry={true}
                         onChangeText={(text) => {
                             this.setState({
                                 password: text
+                            })
+                        }}
+                    />
+                    <TextInput style={styles.formTextInput} placeholder={"Country currency code"}
+                        maxLength={8}
+                        onChangeText={(text) => {
+                            this.setState({
+                                currencyCode: text
                             })
                         }}
                     />
