@@ -166,7 +166,7 @@ export default class Exchange extends Component {
             .then((snapshot) => {
               snapshot.forEach((doc) => {
                 var donorId = doc.data().donor_id
-                var bookName = doc.data().item_name
+                var itemName = doc.data().item_name
                 db.collection('all_notifications').add({
                   "targeted_user_id": donorId,
                   "message": name + " " + lastName + " received the item " + itemName,

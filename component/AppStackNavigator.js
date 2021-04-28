@@ -2,7 +2,7 @@ import React from 'react'
 import { createStackNavigator } from 'react-navigation-stack'
 import HomeScreen from '../screens/HomeScreen'
 import UserDetailsScreen from '../screens/UserDetailsScreen'
-import NotificationScreen from '../screens/NotificationsScreen'
+import NotificationScreen from '../screens/NotificationScreen'
 
 export const AppStackNavigator = createStackNavigator({
     BarterList: {

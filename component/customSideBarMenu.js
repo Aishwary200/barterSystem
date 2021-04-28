@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import * as ImagePicker from 'expo-image-picker'
-import { Avatar } from 'react-native-elements'
-import { DrawerItems } from 'react-navigation-drawer'
+import * as ImagePicker from 'expo-image-picker';
+import { Avatar } from 'react-native-elements';
+import { DrawerItems } from 'react-navigation-drawer';
 import firebase from 'firebase';
+import db from '../config';
 
 export default class CustomSideBarMenu extends Component {
     constructor() {
@@ -63,7 +64,7 @@ export default class CustomSideBarMenu extends Component {
     }
     render() {
         return (
-            <View style={{ flex: 1 }}>
+            <View style={styles.container}>
                 <View>
                     <Avatar rounded source={{ uri: this.state.image }} size='medium' onPress={() => {
                         this.selectPicture();
@@ -80,7 +81,7 @@ export default class CustomSideBarMenu extends Component {
                             this.props.navigation.navigate('SignUpLoginScreen')
                             firebase.auth().signOut()
                         }}>
-                        <Text>Log Out</Text>
+                        <Text style={styles.logOutText}>Log Out</Text>
                     </TouchableOpacity>
                 </View>
             </View>

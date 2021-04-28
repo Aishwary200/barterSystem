@@ -1,6 +1,6 @@
-import firebase from 'firebase/app';
-require('@firebase/firestore')
+import firebase from 'firebase';
 
+require('@firebase/firestore')
 var firebaseConfig = {
     apiKey: "AIzaSyALzR9DMFQZDaw9jWQxh3nFvv85XojUd-Q",
     authDomain: "bartersystem-ce131.firebaseapp.com",
@@ -10,5 +10,7 @@ var firebaseConfig = {
     appId: "1:396426978200:web:4f4e7a694b90a26f7dc1ed"
 };
 
-firebase.initializeApp(firebaseConfig);
-export default firebase.firestore()
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+export default firebaseConfig;

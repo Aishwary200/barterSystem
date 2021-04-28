@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import { View,Text,FlatList,StyleSheet } from 'react-native'
 import firebase from 'firebase'
 import db from '../config'
 import { ListItem } from 'react-native-elements'
@@ -65,16 +65,5 @@ const styles = StyleSheet.create({
         fontSize: 20,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    button: {
-        width: 100, height: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: "#ff5722",
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 8
-        }
     }
 })

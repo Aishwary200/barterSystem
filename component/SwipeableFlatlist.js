@@ -31,7 +31,7 @@ export default class SwipeableFlatlist extends Component {
             this.updateMarkAsread(allNotifications[prevIndex]);
             newData.splice(prevIndex, 1);
             this.setState({ allNotifications: newData })
-        };
+        }
     };
 
 
